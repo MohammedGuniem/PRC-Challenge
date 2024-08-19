@@ -1,0 +1,8 @@
+# Ignore all trajectory files, but upload the first one only for demo purposes
+*.parquet
+
+# Ignore all notebook checkpoints
+*.ipynb_checkpoints
+
+# Ignore the dataset configuration download file
+data/response_1723987891633.json
