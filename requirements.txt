@@ -1,2 +1,4 @@
 pyopensky
 notebook
+scikit-learn
+matplotlib
