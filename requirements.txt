@@ -2,3 +2,4 @@ pyopensky
 notebook
 scikit-learn
 matplotlib
+lxml
