@@ -6,4 +6,11 @@
 
 # Ignore the dataset configuration download file
 data/response_1723987891633.json
-data/one_hot_encoded_challenge_set_df.csv
+
+# Ignore the dataset encoded files
+data/processed_challenge_set.csv
+data/combined_challenge_set.csv
+data/label_encoded_with_value_recognition_challenge_set.csv
+data/label_encoded_without_value_recognition_challenge_set.csv
+data/one_hot_encoded_challenge_set.csv
+data/target_encoded_challenge_set.csv
