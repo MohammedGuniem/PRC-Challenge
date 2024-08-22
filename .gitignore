@@ -6,3 +6,4 @@
 
 # Ignore the dataset configuration download file
 data/response_1723987891633.json
+data/one_hot_encoded_challenge_set_df.csv

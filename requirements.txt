@@ -3,3 +3,4 @@ notebook
 scikit-learn
 matplotlib
 lxml
+seaborn
