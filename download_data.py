@@ -1,7 +1,7 @@
 from pyopensky.s3 import S3Client
 import os
 
-file_names = os.listdir("./")
+file_names = os.listdir("./data/trajectory_files")
 
 s3 = S3Client()
 
