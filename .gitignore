@@ -1,6 +1,6 @@
 # Ignore all data files as they are often too large to upload to github
 # Follow the instructions on how to download and handle data files on your local machine
-data/*
+/data/
 
 # Ignore all notebook checkpoints
 *.ipynb_checkpoints
