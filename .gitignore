@@ -1,11 +1,12 @@
-# Ignore all trajectory files, but upload the first one only for demo purposes
-*.parquet
+# Ignore all data files as they are often too large to upload to github
+# Follow the instructions on how to download and handle data files on your local machine
+data/*
 
 # Ignore all notebook checkpoints
 *.ipynb_checkpoints
 
 # Ignore the dataset configuration download file
-data/response_1723987891633.json
+response_1723987891633.json
 
 # Ignore the dataset encoded files
 data/processed_challenge_set.csv
