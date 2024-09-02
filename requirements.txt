@@ -4,3 +4,4 @@ scikit-learn
 matplotlib
 lxml
 seaborn
+dask[dataframe]
