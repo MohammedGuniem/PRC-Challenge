@@ -16,3 +16,5 @@ data/label_encoded_without_value_recognition_challenge_set.csv
 data/one_hot_encoded_challenge_set.csv
 data/target_encoded_challenge_set.csv
 notebooks/response_1723987891633.json
+submission_set_with_trajectory.csv
+challenge_set_with_trajectory.csv
