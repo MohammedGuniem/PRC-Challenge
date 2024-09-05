@@ -3,8 +3,8 @@
 
 
 ### Upload submission file
-> $subfile="team_gentle_wreath_v3_082c7c3a-ed77-4adb-9119-1b8b48dd0668.csv"
-> mc cp ./my_submission.csv dc24/submissions/${subfile}
+> $subfile="team_gentle_wreath_v4_082c7c3a-ed77-4adb-9119-1b8b48dd0668.csv"
+> mc cp ./my_submission_2.csv dc24/submissions/${subfile}
 
 curl -X 'GET' 'https://datacomp.opensky-network.org/api/rankings' -H 'accept: application/json' | jq
 
