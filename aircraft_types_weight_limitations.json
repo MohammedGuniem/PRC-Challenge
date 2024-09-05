@@ -1,0 +1,152 @@
+{
+    "0": {
+		aircraft_type: "A20N",
+		min_weight: 44300,
+		max_weight: 79000,
+	},
+    "1": {
+		aircraft_type: "A21N",
+		min_weight: 50100,
+		max_weight: 93500,
+	},
+    "2": {
+		aircraft_type: "A310",
+		min_weight: 77400,
+		max_weight: 164000,
+	},
+    "3": {
+		aircraft_type: "A319",
+		min_weight: 40800,
+		max_weight: 75500,
+	},
+    "4": {
+		aircraft_type: "A320",
+		min_weight: 42600,
+		max_weight: 78000,
+	},
+	"5": {
+		aircraft_type: "A321",
+		min_weight: 47500,
+		max_weight: 93500,
+	}
+    "6": {
+		aircraft_type: "A332",
+		min_weight: 109400,
+		max_weight: 242000,
+	},
+    "7": {
+		aircraft_type: "A333",
+		min_weight: 129400,
+		max_weight: 242000,
+	},
+    "8": {
+		aircraft_type: "A343",
+		min_weight: 131000,
+		max_weight: 276500,
+	},
+    "9": {
+		aircraft_type: "A359",
+		min_weight: 142400,
+		max_weight: 283000,
+	},
+    "10": {
+		aircraft_type: "AT76",
+		min_weight: 13010,
+		max_weight: 22800,
+	},
+	"11": {
+		aircraft_type: "B38M",
+		min_weight: 45070,
+		max_weight: 88300,
+	},
+	"12": {
+		aircraft_type: "B39M",
+		min_weight: 45070,
+		max_weight: 88300,
+	},
+	"13": {
+		aircraft_type: "B737",
+		min_weight: 37648,
+		max_weight: 70080,
+	},
+	"14": {
+		aircraft_type: "B738",
+		min_weight: 41413,
+		max_weight: 79016,
+	},
+	"15": {
+		aircraft_type: "B739",
+		min_weight: 44677,
+		max_weight: 85139,
+	},
+	"16": {
+		aircraft_type: "B752",
+		min_weight: 52430,
+		max_weight: 115660,
+	},
+	"17": {
+		aircraft_type: "B763",
+		min_weight: 86100,
+		max_weight: 158800,
+	},
+	"18": {
+		aircraft_type: "B772",
+		min_weight: 135850,
+		max_weight: 297550,
+	},
+	"19": {
+		aircraft_type: "B773",
+		min_weight: 160530,
+		max_weight: 299370,
+	},
+    "20": {
+		aircraft_type: "B77W",
+		min_weight: 152000,
+		max_weight: 351533,
+	},
+    "21": {
+		aircraft_type: "B788",
+		min_weight: 135500,
+		max_weight: 254000,
+	},
+    "22": {
+		aircraft_type: "B789",
+		min_weight: 135500,
+		max_weight: 254000,
+	},
+    "23": {
+		aircraft_type: "BCS1",
+		min_weight: 35220,
+		max_weight: 63100,
+	},
+    "24": {
+		aircraft_type: "BCS3",
+		min_weight: 37080,
+		max_weight: 70900,
+	},
+    "25": {
+		aircraft_type: "C56X",
+		min_weight: 5806,
+		max_weight: 9200,
+	},
+    "26": {
+		aircraft_type: "CRJ9",
+		min_weight: 21845,
+		max_weight: 38330,
+	},
+    "27": {
+		aircraft_type: "E190",
+		min_weight: 27837,
+		max_weight: 51800,
+	},
+    "28": {
+		aircraft_type: "E195",
+		min_weight: 28667,
+		max_weight: 52290,
+	},
+    "29": {
+		aircraft_type: "E290",
+		min_weight: 35700,
+		max_weight: 62500,
+	}
+}
