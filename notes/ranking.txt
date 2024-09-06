@@ -1,3 +1,4 @@
 {"rmse":3673.77,"rank":2,"team_name":"team_gentle_wreath","file_version":"v1"}
 {"rmse":3636.26,"rank":2,"team_name":"team_gentle_wreath","file_version":"v2"} with min_tow and max_tow (2 features)
 {"rmse":3633.08,"rank":2,"team_name":"team_gentle_wreath","file_version":"v3"} with offblock time and arrival time (6 features)
+{"rmse":3586.1,"rank":4,"team_name":"team_gentle_wreath","file_version":"v4"} with weight limitation/correction upon prediction
