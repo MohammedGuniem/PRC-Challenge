@@ -1,5 +1,6 @@
-{"rmse":3673.77,"rank":2,"team_name":"team_gentle_wreath","file_version":"v1"}
-{"rmse":3636.26,"rank":2,"team_name":"team_gentle_wreath","file_version":"v2"} with min_tow and max_tow (2 features)
-{"rmse":3633.08,"rank":2,"team_name":"team_gentle_wreath","file_version":"v3"} with offblock time and arrival time (6 features)
-{"rmse":3586.10,"rank":4,"team_name":"team_gentle_wreath","file_version":"v4"} with weight limitation/correction upon prediction
-{"rmse":3508.24,"rank":3,"team_name":"team_gentle_wreath","file_version":"v5"} with weight limitation/correction upon prediction and 20 estimators
+{"rmse":3673.77,"rank":2,"team_name":"team_gentle_wreath","file_version":"v1"} Random forest
+{"rmse":3636.26,"rank":2,"team_name":"team_gentle_wreath","file_version":"v2"} Random forest with min_tow and max_tow (2 features)
+{"rmse":3633.08,"rank":2,"team_name":"team_gentle_wreath","file_version":"v3"} Random forest with offblock time and arrival time (6 features)
+{"rmse":3586.10,"rank":4,"team_name":"team_gentle_wreath","file_version":"v4"} Random forest with weight limitation/correction upon prediction
+{"rmse":3508.24,"rank":3,"team_name":"team_gentle_wreath","file_version":"v5"} Random forest with weight limitation/correction upon prediction and 20 estimators
+{"rmse":3473.09,"rank":4,"team_name":"team_gentle_wreath","file_version":"v6"} XGBoost with weight limitation/correction upon prediction

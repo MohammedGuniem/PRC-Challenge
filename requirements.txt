@@ -1,5 +1,6 @@
 pyopensky
 notebook
+xgboost
 scikit-learn
 matplotlib
 lxml
