@@ -1,6 +1,10 @@
-# Ignore all data files as they are often too large to upload to github
+# Ignore all big sized data files as they are often too large to upload to github
 # Follow the instructions on how to download and handle data files on your local machine
-/data/
+/data/trajectory_files/
+/data/challenge_set.csv
+/data/submission_set.csv
+/data/challenge_set_with_trajectory.csv
+/data/submission_set_with_trajectory.csv
 
 # Ignore all notebook checkpoints
 *.ipynb_checkpoints
@@ -8,13 +12,5 @@
 # Ignore the dataset configuration download file
 response_1723987891633.json
 
-# Ignore the dataset encoded files
-data/processed_challenge_set.csv
-data/combined_challenge_set.csv
-data/label_encoded_with_value_recognition_challenge_set.csv
-data/label_encoded_without_value_recognition_challenge_set.csv
-data/one_hot_encoded_challenge_set.csv
-data/target_encoded_challenge_set.csv
-notebooks/response_1723987891633.json
-submission_set_with_trajectory.csv
-challenge_set_with_trajectory.csv
+# Ignore the team key
+/data/team_key.json
