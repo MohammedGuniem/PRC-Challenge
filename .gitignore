@@ -9,8 +9,5 @@
 # Ignore all notebook checkpoints
 *.ipynb_checkpoints
 
-# Ignore the dataset configuration download file
-response_1723987891633.json
-
 # Ignore the team key
 /data/team_key.json
