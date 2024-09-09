@@ -6,3 +6,4 @@ matplotlib
 lxml
 seaborn
 dask[dataframe]
+catboost
