@@ -3,3 +3,4 @@ Elastic Net - 14786 RMSE
 Neural Network (MLP) - 35041 RMSE
 Support Vector Regressor - 14784 RMSE
 KNeighbors Regressor - 34459
+AdaBoost - 10045
