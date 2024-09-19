@@ -1,7 +1,7 @@
 *** Plan ***
 - Done: Process challenge set (split date and time and drop not needed columns). -> processed_challenge_set.csv
-- Process submission set (split date and time and drop not needed columns). -> processed_submission_set.csv
-- Gather stats from trajectory. -> summarized_trajectory.csv
+- Done: Process submission set (split date and time and drop not needed columns). -> processed_submission_set.csv
+- Ongoing: Gather stats from trajectories. -> summarized_trajectory.csv
 - Merge trajectory stats with processed challenge set. -> challenge_set_with_trajectories.csv
 - Merge trajectory stats with process submission set. -> submission_set_with_trajectories.csv
 - Concat (processed challenge set+submission set), label encode, then split. -> encoded_challenge_set.csv, encoded_submission_set.csv
