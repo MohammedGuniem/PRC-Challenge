@@ -1,0 +1,14 @@
+- Best RMSE: 3565 - Grid Search and Evaluate XGBoost model based on encoded_challenge_set
+- Best RMSE: 5438 - Try techniques \PCA to improve model performance
+- Gather stats from trajectory, merge with challange_set and build model with them, then perform Grid Search and Evaluate
+
+- Try techniques like clustering (k-means) to improve model performance
+- Try techniques like categorizing the training data based on error of each datapoint
+
+
+369013 in challenge_set
+= 369013 Training datapoint ( 369013/527162 = 0,70 %)
+105959 in submission_set
+52190 in final_submission_set
+= 158149 Submission datapoint ( 158149/527162 = 0,30 %)
+>> Test size should be 0.3
