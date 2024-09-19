@@ -1,11 +1,14 @@
-- Best RMSE: 3565 - Grid Search and Evaluate XGBoost model based on encoded_challenge_set
-- Best RMSE: 5438 - Try techniques \PCA to improve model performance
-- Gather stats from trajectory, merge with challange_set and build model with them, then perform Grid Search and Evaluate
+*** Plan ***
+- Done: Process challenge set (split date and time and drop not needed columns). -> processed_challenge_set.csv
+- Process submission set (split date and time and drop not needed columns). -> processed_submission_set.csv
+- Gather stats from trajectory. -> summarized_trajectory.csv
+- Merge trajectory stats with processed challenge set. -> challenge_set_with_trajectories.csv
+- Merge trajectory stats with process submission set. -> submission_set_with_trajectories.csv
+- Concat (processed challenge set+submission set), label encode, then split. -> encoded_challenge_set.csv, encoded_submission_set.csv
+- Normalize or Standarize
+- Grid Search, Evaluate XGBoost model based on encoded_challenge_set, then plot importance
 
-- Try techniques like clustering (k-means) to improve model performance
-- Try techniques like categorizing the training data based on error of each datapoint
-
-
+*** Data Size ***
 369013 in challenge_set
 = 369013 Training datapoint ( 369013/527162 = 0,70 %)
 105959 in submission_set

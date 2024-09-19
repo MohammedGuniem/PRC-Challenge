@@ -1,10 +1,13 @@
 # Ignore all big sized data files as they are often too large to upload to github
 # Follow the instructions on how to download and handle data files on your local machine
 /data/trajectory_files/
-/data/challenge_set.csv
-/data/submission_set.csv
-/data/challenge_set_with_trajectory.csv
-/data/submission_set_with_trajectory.csv
+processed_challenge_set.csv
+processed_submission_set.csv
+summarized_trajectory.csv
+challenge_set_with_trajectories.csv
+submission_set_with_trajectories.csv
+encoded_challenge_set.csv
+encoded_submission_set.csv
 
 # Ignore all notebook checkpoints
 *.ipynb_checkpoints
