@@ -5,7 +5,9 @@
 4- Done: Merge trajectory stats with processed challenge set. -> challenge_set_with_trajectories.csv
 4- Done: Merge trajectory stats with process submission set. -> submission_set_with_trajectories.csv
 5- Done: Concat (processed challenge set+submission set), label encode, then split. -> encoded_challenge_set.csv, encoded_submission_set.csv
-6- Grid Search XGBoost model based on encoded_challenge_set, then plot importance
+6- Done: Grid Search XGBoost model based on encoded_challenge_set, then plot importance
+7- Build models with less features by selecting the most important features one at a time
+8- Build models with less features by selecting the most correlated features to tow one at a time
 
 *** Data Size ***
 369013 in challenge_set
