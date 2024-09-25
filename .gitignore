@@ -5,8 +5,3 @@ notebooks/data/*
 
 # Ignore all notebook checkpoints
 *.ipynb_checkpoints
-
-# Ignore the team key
-/data/team_key.json
-data/challenge_set_experiment_1.csv
-
