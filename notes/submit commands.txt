@@ -2,6 +2,6 @@
 > mc alias set dc24 https://s3.opensky-network.org/ ZG58zJvKhts2bkOX eU95azmBpK82kg96mE0TNzsWov3OvP2d
 
 ### Upload submission file
-> $subfile="team_gentle_wreath_v9_082c7c3a-ed77-4adb-9119-1b8b48dd0668.csv"
+> $subfile="team_gentle_wreath_v" {VERSION_NUMBER} "_082c7c3a-ed77-4adb-9119-1b8b48dd0668.csv"
 subfile=${team_name}_v${num}_${team_id}.csv
-> mc cp .\my_submission_v9.csv dc24/submissions/${subfile}
+> mc cp .\my_submission_v{VERSION_NUMBER}.csv dc24/submissions/${subfile}
