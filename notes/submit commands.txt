@@ -5,3 +5,8 @@
 > $subfile="team_gentle_wreath_v" {VERSION_NUMBER} "_082c7c3a-ed77-4adb-9119-1b8b48dd0668.csv"
 subfile=${team_name}_v${num}_${team_id}.csv
 > mc cp .\my_submission_v{VERSION_NUMBER}.csv dc24/submissions/${subfile}
+
+
+*** EXAMPLE ***
+$subfile="team_gentle_wreath_v13_082c7c3a-ed77-4adb-9119-1b8b48dd0668.csv"
+mc cp .\my_submission_v13.csv dc24/submissions/${subfile}
