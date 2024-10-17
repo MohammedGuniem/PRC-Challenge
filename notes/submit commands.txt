@@ -8,5 +8,5 @@ subfile=${team_name}_v${num}_${team_id}.csv
 
 
 *** EXAMPLE ***
-$subfile="team_gentle_wreath_v16_082c7c3a-ed77-4adb-9119-1b8b48dd0668.csv"
-mc cp .\my_submission_v16.csv dc24/submissions/${subfile}
+$subfile="team_gentle_wreath_v17_082c7c3a-ed77-4adb-9119-1b8b48dd0668.csv"
+mc cp .\my_submission_v17.csv dc24/submissions/${subfile}
