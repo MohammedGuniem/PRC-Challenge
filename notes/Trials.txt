@@ -1,9 +1,0 @@
-Bayesian Ridge Regressor - Over 10000 in RMSE
-Elastic Net - 14786 RMSE
-Neural Network (MLP) - 35041 RMSE
-Support Vector Regressor - 14784 RMSE
-KNeighbors Regressor - 34459 RMSE
-AdaBoost - 10045 RMSE
-Stacking Regressor - 15000 RMSE
-PoissonRegressor - 29000 RMSE
-TweedieRegressor - 15000
