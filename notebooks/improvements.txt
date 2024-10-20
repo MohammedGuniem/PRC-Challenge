@@ -1,3 +1,2 @@
-- See results of script number 11 and try the optimal collection of to features, submit and look for improvement in RMSE Ranking
-
+- Look for results of version 19
 - Add weight limit from aircraft type, based on max and min from the samme dataset, submit and look for improvement in RMSE Ranking
