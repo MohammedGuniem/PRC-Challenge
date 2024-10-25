@@ -3,5 +3,3 @@ notebook
 xgboost
 scikit-learn
 matplotlib
-seaborn
-tensorflow
