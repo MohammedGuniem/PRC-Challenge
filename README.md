@@ -13,14 +13,14 @@
 
 6. [My Method of Work & Solution](#My-Method-of-Work--Solution)
    - [I. Data processing](#i-Data-processing)
-   - [II. Summarizing trajectories & adding trajectory features](#ii-Summarizing-trajectories-&-adding-trajectory-features)
+   - [II. Summarizing trajectories & adding trajectory features](#ii-Summarizing-trajectories--adding-trajectory-features)
    - [III. Label encoding](#iii-Label-encoding)
    - [IV. Grid searching and tuning hyperparameters of xgboost](#iv-Grid-searching-and-tuning-hyperparameters-of-xgboost)
    - [V. Selecting most important features based on gain](#v-Selecting-most-important-features-based-on-gain)
    - [VI. Choosing the number of n_estimators](#vi-Choosing-the-number-of-n_estimators)
    - [VII. Choosing the max_depth](#vii-Choosing-the-max_depth)
    - [VIII. Final tuning of hyperparameters](#viii-Final-tuning-of-hyperparameters)
-   - [IX. Limiting of predicted aircraft_type based on min/max per aircraft type in training data](#ix-Limiting-of-predicted-aircraft_type-based-on-min/max-per-aircraft-type-in-training-data)
+   - [IX. Limiting of predicted aircraft_type based on min/max per aircraft type in training data](#ix-Limiting-of-predicted-aircraft_type-based-on-minmax-per-aircraft-type-in-training-data)
    - [X. Prediction and final submission](#x-Prediction-and-final-submission)
 
 7. [Result Achieved](#Result-Achieved)
