@@ -11,7 +11,7 @@
 
 5. [Adding original challenge data](#Adding-original-challenge-data)
 
-6. [My Method of Work & Solution](#My-Method-of-Work-&-Solution)
+6. [My Method of Work & Solution](#My-Method-of-Work--Solution)
    - [I. Data processing](#i-Data-processing)
    - [II. Summarizing trajectories & adding trajectory features](#ii-Summarizing-trajectories-&-adding-trajectory-features)
    - [III. Label encoding](#iii-Label-encoding)
