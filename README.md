@@ -21,7 +21,7 @@
    - [VII. Choosing the max_depth](#VII.)
    - [VIII. Final tuning of hyperparameters](#VIII.)
    - [IX. Limiting of predicted aircraft_type based on min/max per aircraft type in training data](#IX.)
-   - [X. Prediction and final submission](#X.)
+   - [X. Prediction and final submission](#X.-Prediction-and-final-submission)
 
 7. [Result Achieved](#Result)
 
