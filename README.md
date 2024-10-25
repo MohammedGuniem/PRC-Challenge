@@ -1,5 +1,30 @@
 # PRC Challenge
 
+## Table of Contents
+1. [Goal](#Goal)
+
+2. [Dataset](#Dataset)
+
+3. [K-fold Evaluation](#K-fold)
+
+4. [Setup instructions](#Setup)
+
+5. [Adding original challenge data](#Adding)
+
+6. [My Method of Work & Solution](#My)
+   - [I. Data processing](#I.)
+   - [II. Summarizing trajectories & adding trajectory features](#II.)
+   - [III. Label encoding](#III.)
+   - [IV. Grid searching and tuning hyperparameters of xgboost](#IV.)
+   - [V. Selecting most important features based on gain](#V.)
+   - [VI. Choosing the number of n_estimators](#VI.)
+   - [VII. Choosing the max_depth](#VII.)
+   - [VIII. Final tuning of hyperparameters](#VIII.)
+   - [IX. Limiting of predicted aircraft_type based on min/max per aircraft type in training data](#IX.)
+   - [X. Prediction and final submission](#X.)
+
+7. [Result Achieved](#Result)
+
 ## Goal
 Predicting the total takeoff weight of an aircraft with minimum Root Mean Squared Error RMSE and minimum percentage error.
 
@@ -56,9 +81,14 @@ pip install -r requirements.txt
 jupyter notebook
 ```
 
-## My Method of Work & Solution
+## Adding original challenge data
+- You should place the challenge_set.csv the root folder ```/PRC_data``` and place the trajecotry .parquet files inside ```/PRC_data/trajectory_files```
 
-### Data processing
+## My Method of Work & Solution
+* The flow of this solution is visualized in the diagram below and explained further under this diagram:
+![PRC Challenge Solution Flow](/documentation/PRC_Challenge_Solution_Flow.png)
+
+### I. Data processing
 * To start with the data is viewed and a decision was made to split the date column into 3 feature columns (month_day, month and day) because the year is always 2022 is the data and thus it is non-informativ<br/>
 * The same is also applied to the actual_offblock_time by creating 6 other feature columns (_hour_minute, _hour, _minute, _hour_minute, _hour, _minute)
 * The dataset is them checked for any Nan values in any cells, and stored into "./data/processed_challenge_set.csv"
@@ -67,7 +97,7 @@ jupyter notebook
     *   01_process_challenge_set.ipynb
     *   02_process_submission_set.ipynb
 
-### Summarizing trajectories & adding trajectory features
+### II. Summarizing trajectories & adding trajectory features
 The trajectory dataset is very large and contains detailed information about the trajectory of each flight in the challenge set. My solution was to summarize the trajectories by following the steps below
 * Grouping trajectories by flight_id
 * Calculating the 8 basic statistics of each trajecotry group; these are (count, mean, standard_deviation, minimum, 25percentile, median or 50percentile, 75percentile, max).
@@ -79,7 +109,7 @@ The trajectory dataset is very large and contains detailed information about the
     *   03_summarize_trajectories.ipynb
     *   04_add_trajectories_to_datasets.ipynb
 
-### Label encoding
+### III. Label encoding
 Because XGBoost and many other machine learning algorithm works better with numerical values, label encoding can be used to encode categorical features with numerical values.
 * It is however important to encode both the training and testing data together so a categorical value (for example "A") would have the code 1 at both training and testing data, and not 1 in training data and 3 in the testing data.
 * This is why both dataset are put together before encoding.
@@ -87,19 +117,20 @@ Because XGBoost and many other machine learning algorithm works better with nume
 * The code is to be found in the notebook
     *   05_label_encode.ipynb
 
-### Grid searching and tuning hyperparameters of xgboost
+### IV. Grid searching and tuning hyperparameters of xgboost
 Although multiple other machine learning algorithm was tried in several experiments, the XGBoost Regressor was chosen because it gave the best performance measured in RMSE. XGBoost is somehow similar to random forest in its nature but with inhanced optimization and better performance.
 * Grid searching combined with 3-fold validation was used to build 3 models of each combination of the following values of hyperparameters in order to tune them for best performance
-```
-param_grid = {
-    'learning_rate': [0.01, 0.2, 1.0],
-    'subsample': [0.8, 0.9, 1.0],
-    'colsample_bytree': [0.8, 0.9, 1.0],
-    'max_depth': [8, 9, 10],
-    'min_child_weight': [8, 9, 10],
-}
-```
-* Which yields to the following result
+
+
+|       Parameter      |                           Purpose                                                      |       Values in Grid Search       |
+|----------------------|----------------------------------------------------------------------------------------|-----------------------------------|
+|    learning_rate     | Controls the contribution of each tree to the final prediction                         |        [0.01, 0.2, 1.0]           |
+|     subsample        | Controls the fraction of training samples that are randomly selected to grow each tree |        [0.8, 0.9, 1.0]            |
+|   colsample_bytree   | Specifies the fraction of features (or columns) to be randomly selected for each tree  |        [0.8, 0.9, 1.0]            |
+|     max_depth        | Specifies the maximum depth of each decision tree in the ensemble                      |        [8, 9, 10]                 |
+|   min_child_weight   | Control the minimum number of observations needed in a child node                      |        [8, 9, 10]                 |
+
+* This grid search yields to the following result
 ```
 Best parameters: {'colsample_bytree': 0.9, 'learning_rate': 0.2, 'max_depth': 10, 'min_child_weight': 10, 'subsample': 1.0}
 Best RMSE: 2996.217350497871
@@ -108,43 +139,49 @@ Best RMSE: 2996.217350497871
 * The code is to be found in the notebook
     *   06_grid_search_xgboost.ipynb
 
-### Selecting most important features based on gain
+### V. Selecting most important features based on gain
 An advatage of XGBoost is that it scores each feature regarding how much it contributes to the RMSE score in the optimal model. Which we can use to further optimize our model as follows:
 * Ordering features from top to least important according the the gain score from XGBoost
 * Adding one n-top feature at a time, then building and evaluating a model with these n-features then keeping track of the score.
 * At the end, we select the best model and use the top n features that gave the best RMSE.
+* The result is that running the model with the top 49 most important features, gives best RMSE score of 2954
 * The code is to be found in the notebook
     *   07_select_most_important_features.ipynb
 
-### Choosing the number of n_estimators
+### VI. Choosing the number of n_estimators
 n_estimators are the number of smaller trees to be made under the training process in XGBoost. 
 * A optimal value of n_estimators can be found from what is known as the elbow graph, where we pick the number of estimators that gives the RMSE score right before it converges to a minimum RMSE score for the model
 * Grid search can be used here to search from the default 100 to 3000 estimators with the increase of 100 estimators at a time
-* Then the elbow graph is ploted and the optimal number of estimators is found to be ?????????????????????
+* Then the elbow graph is plotted and the optimal number of estimators is found to be 850 estimators with an acheived RMSE that converages to 2871.
 * The code is to be found in the notebook
     *   08_choosing_n_estimators.ipynb
 
-### Choosing the max_depth
+### VII. Choosing the max_depth
 max_depth is how far down an estimator tree is allowed to grow
-* The same technique of elbow graph can also be used to find the optimal max_depth for this model by searching from 6 to 16 max_depth with the increase of 1. which gave an optimal performance at ?????????????????????
+* The same technique of elbow graph can also be used to find the optimal max_depth for this model by searching from 6 to 16 max_depth with the increase of 1. which gave an optimal performance at at max_depth of 9 with an RMSE score of 2865 
 * The code is to be found in the notebook
     *   09_choosing_max_depth.ipynb
 
-### Final tuning of hyperparameters
-After finding the optimal max_depth and n_estimators, it is a good idea to re-run the tuning process of previously trained hyperparameters again to either further improve the model performance or making sure the performance has not beed degraded after the choice of n_estimators and max_depth
+### VIII. Final tuning of hyperparameters
+After finding the optimal max_depth and n_estimators, it is a good idea to re-run the tuning process of previously trained hyperparameters again to further improve the model performance or making sure the performance has not beed decreased after the choice of n_estimators and max_depth
 * The code is to be found in the notebook
     *   10_final_grid_search_xgboost.ipynb
+* The grid search yields to the following results for optimal performance
+```
 
-### Limiting of predicted aircraft_type based on min/max per aircraft type in training data
+```
+
+### IX. Limiting of predicted aircraft_type based on min/max per aircraft type in training data
 As an experiment and since aircraft has their minimum and maximum take off weight limitation, i wanted to implement a measure after predicting that either increase the predicted value to the minimum threshold or decrease the predicted value to a maximum take off weight threshold.
 * These thresholds are found by grouping the challenge training data by aircraft_type and then calculating the minimum and maximum for each aircraft_type.
 * In addition to min and max per aircraft_type, different percentiles has also been tried from 10 to 100 with a step 10 to see if using thiese percentiles as an upper and lower bound gives better performance.
 * The experiment and evaluation code is to be found in the notebook
     *   11_limit_predicted_tow_by_aircraft_type.ipynb
 
-### Prediction and final submission
-Finally a final tuned model is build and predictioms are made then written to an output .csv file.
-* The code is to be found in the notebook
+### X. Prediction and final submission
+At the end, a final tuned model is built and used for making predictions of the submission dataset, then the submission .csv file is stored at ```/notebooks/submissions/{my_submission_v25.csv}```
+* The code of this step is to be found in the notebook
     *   12_RUN_OPTIMAL_XGBOOST.ipynb
     
-### Result Achieved
+## Result Achieved
+After submitting the predictions to the challenge ranking service, it got an RMSE score of ????????????? with an error rate of ?????????????
