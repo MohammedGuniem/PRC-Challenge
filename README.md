@@ -148,6 +148,8 @@ An advatage of XGBoost is that it scores each feature regarding how much it cont
 * The code is to be found in the notebook
     *   07_select_most_important_features.ipynb
 
+![Elbow graph used to view how rmse score drops by adding more important features one at a time](/documentation/rmse_by_increaed_number_of_most_important_features.png)
+
 ### VI. Choosing the number of n_estimators
 n_estimators are the number of smaller trees to be made under the training process in XGBoost. 
 * A optimal value of n_estimators can be found from what is known as the elbow graph, where we pick the number of estimators that gives the RMSE score right before it converges to a minimum RMSE score for the model
@@ -156,11 +158,15 @@ n_estimators are the number of smaller trees to be made under the training proce
 * The code is to be found in the notebook
     *   08_choosing_n_estimators.ipynb
 
+![Elbow graph used for chossing the optimal n_estimators value](/documentation/elbow_graph_for_n_estimators.png)
+
 ### VII. Choosing the max_depth
 max_depth is how far down an estimator tree is allowed to grow
 * The same technique of elbow graph can also be used to find the optimal max_depth for this model by searching from 6 to 16 max_depth with the increase of 1. which gave an optimal performance at at max_depth of 9 with an RMSE score of 2865 
 * The code is to be found in the notebook
     *   09_choosing_max_depth.ipynb
+
+![Elbow graph used for chossing the optimal max depth value](/documentation/elbow_graph_for_max_depth.png)
 
 ### VIII. Final tuning of hyperparameters
 After finding the optimal max_depth and n_estimators, it is a good idea to re-run the tuning process of previously trained hyperparameters again to further improve the model performance or making sure the performance has not beed decreased after the choice of n_estimators and max_depth
