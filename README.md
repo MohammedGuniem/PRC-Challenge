@@ -5,25 +5,25 @@
 
 2. [Dataset](#Dataset)
 
-3. [K-fold Evaluation](#K-fold)
+3. [K-fold Evaluation](#K-fold-Evaluation)
 
 4. [Setup instructions](#Setup)
 
 5. [Adding original challenge data](#Adding)
 
-6. [My Method of Work & Solution](#My)
-   - [I. Data processing](#I.)
-   - [II. Summarizing trajectories & adding trajectory features](#II.)
-   - [III. Label encoding](#III.)
-   - [IV. Grid searching and tuning hyperparameters of xgboost](#IV.)
-   - [V. Selecting most important features based on gain](#V.)
-   - [VI. Choosing the number of n_estimators](#VI.)
-   - [VII. Choosing the max_depth](#VII.)
-   - [VIII. Final tuning of hyperparameters](#VIII.)
-   - [IX. Limiting of predicted aircraft_type based on min/max per aircraft type in training data](#IX.)
-   - [X. Prediction and final submission](#X.-Prediction-and-final-submission)
+6. [My Method of Work & Solution](#My-Method-of-Work-&-Solution)
+   - [I. Data processing](#i-Data-processing)
+   - [II. Summarizing trajectories & adding trajectory features](#ii-Summarizing-trajectories-&-adding-trajectory-features)
+   - [III. Label encoding](#iii-Label-encoding)
+   - [IV. Grid searching and tuning hyperparameters of xgboost](#iv-Grid-searching-and-tuning-hyperparameters-of-xgboost)
+   - [V. Selecting most important features based on gain](#v-Selecting-most-important-features-based-on-gain)
+   - [VI. Choosing the number of n_estimators](#vi-Choosing-the-number-of-n_estimators)
+   - [VII. Choosing the max_depth](#vii-Choosing-the-max_depth)
+   - [VIII. Final tuning of hyperparameters](#viii-Final-tuning-of-hyperparameters)
+   - [IX. Limiting of predicted aircraft_type based on min/max per aircraft type in training data](#ix-Limiting-of-predicted-aircraft_type-based-on-min/max-per-aircraft-type-in-training-data)
+   - [X. Prediction and final submission](#x-Prediction-and-final-submission)
 
-7. [Result Achieved](#Result)
+7. [Result Achieved](#Result-Achieved)
 
 ## Goal
 Predicting the total takeoff weight of an aircraft with minimum Root Mean Squared Error RMSE and minimum percentage error.
