@@ -1,7 +1,10 @@
 # Ignore all big sized data files as they are often too large to upload to github
 # Follow the instructions on how to download and handle data files on your local machine
 PRC_data/*
+!PRC_data/trajectory_files
+!PRC_data/ADD_DATASETS_IN_THIS_FOLDER.txt
 notebooks/data/*
+*.parquet
 
 # Ignore all notebook checkpoints
 *.ipynb_checkpoints

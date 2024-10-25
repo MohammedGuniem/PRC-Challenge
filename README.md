@@ -168,15 +168,17 @@ After finding the optimal max_depth and n_estimators, it is a good idea to re-ru
     *   10_final_grid_search_xgboost.ipynb
 * The grid search yields to the following results for optimal performance
 ```
-
+Best parameters: {'colsample_bytree': 0.8, 'learning_rate': 0.2, 'min_child_weight': 9, 'subsample': 1.0}
+Best RMSE: 2858.3085356585557
 ```
 
 ### IX. Limiting of predicted aircraft_type based on min/max per aircraft type in training data
 As an experiment and since aircraft has their minimum and maximum take off weight limitation, i wanted to implement a measure after predicting that either increase the predicted value to the minimum threshold or decrease the predicted value to a maximum take off weight threshold.
 * These thresholds are found by grouping the challenge training data by aircraft_type and then calculating the minimum and maximum for each aircraft_type.
-* In addition to min and max per aircraft_type, different percentiles has also been tried from 10 to 100 with a step 10 to see if using thiese percentiles as an upper and lower bound gives better performance.
+* In addition to min and max per aircraft_type, different percentiles has also been tried from 1 to 10 with a step 1 to see if using thiese percentiles as an upper and lower bound gives better performance.
 * The experiment and evaluation code is to be found in the notebook
     *   11_limit_predicted_tow_by_aircraft_type.ipynb
+* This technique ensure that we dont predict values outside the capabilities of the aircraft_type and its outliers. and it looks to improve the performance of the model giving an RMSE of 2841 for min and max and 2840 for 1percentile as min and max.
 
 ### X. Prediction and final submission
 At the end, a final tuned model is built and used for making predictions of the submission dataset, then the submission .csv file is stored at ```/notebooks/submissions/{my_submission_v25.csv}```
