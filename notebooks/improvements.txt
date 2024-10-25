@@ -1,2 +1,0 @@
-- Look for results of version 19
-- Add weight limit from aircraft type, based on max and min from the samme dataset, submit and look for improvement in RMSE Ranking
