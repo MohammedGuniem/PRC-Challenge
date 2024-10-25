@@ -7,9 +7,9 @@
 
 3. [K-fold Evaluation](#K-fold-Evaluation)
 
-4. [Setup instructions](#Setup)
+4. [Setup instructions](#Setup-instructions)
 
-5. [Adding original challenge data](#Adding)
+5. [Adding original challenge data](#Adding-original-challenge-data)
 
 6. [My Method of Work & Solution](#My-Method-of-Work-&-Solution)
    - [I. Data processing](#i-Data-processing)
