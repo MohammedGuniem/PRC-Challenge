@@ -83,6 +83,7 @@ jupyter notebook
 
 ## Adding original challenge data
 - You should place the challenge_set.csv the root folder ```/PRC_data``` and place the trajecotry .parquet files inside ```/PRC_data/trajectory_files```
+- Throughout these notebook a global random_state_number of "123" is used to make it possible to reproduce the same results on any run.
 
 ## My Method of Work & Solution
 * The flow of this solution is visualized in the diagram below and explained further under this diagram:
@@ -192,4 +193,4 @@ At the end, a final tuned model is built and used for making predictions of the 
     *   12_RUN_OPTIMAL_XGBOOST.ipynb
     
 ## Result Achieved
-After submitting the predictions to the challenge ranking service, it got an RMSE score of ????????????? with an error rate of ?????????????
+After submitting the predictions to the challenge ranking service, it got an RMSE score of 2789 with and an error rate of 3% of the ground truth. However, in an earlier experiment and using a learning rate of about 0.1 i was able to get this RMSE ranking score down to around 2702.
