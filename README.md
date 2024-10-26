@@ -83,9 +83,9 @@ jupyter notebook
 
 ## Adding original challenge data
 - You should place the challenge_set.csv the root folder ```/PRC_data``` and place the trajecotry .parquet files inside ```/PRC_data/trajectory_files```
-- Throughout these notebook a global random_state_number of "123" is used to make it possible to reproduce the same results on any run.
 
 ## My Method of Work & Solution
+- Throughout the notebook in this solution, a global random_state_number of "123" is used to make it possible to reproduce the same results on any run.
 * The flow of this solution is visualized in the diagram below and explained further under this diagram:
 ![PRC Challenge Solution Flow](/documentation/PRC_Challenge_Solution_Flow.png)
 
